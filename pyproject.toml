@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "mypy>=1.19.1",
     "pyinstaller>=6.18.0",
 ]
 
@@ -13,7 +14,17 @@ budgetview = "budgetview.main:main"
 
 [dependency-groups]
 dev = [
+    "pre-commit>=4.5.1",
     "pytest>=9.0.2",
     "ruff>=0.15.0",
 ]
 
+[tool.ruff]
+src = ["src"]  # Scans only source—efficient.
+target-version = "py314"  # Python 3.14+ opts.
+extend-select = ["I"]  # Auto-import sorting.
+line-length = 88  # Modern default (black-style).
+
+[tool.mypy]
+files = ["src"]  # Only source—quick scans.
+strict = true  # Enforces best practices (e.g., no Any).
