@@ -5,6 +5,13 @@ build/
 dist/
 wheels/
 *.egg-info
+*.exe.spec
 
 # Virtual environments
 .venv
+
+# Dev
+.vscode
+.idea
+tmp
+*_output.md
